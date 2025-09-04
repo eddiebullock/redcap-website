@@ -61,7 +61,7 @@ const About: React.FC = () => {
               {/* Image next to video */}
               <div className="relative group overflow-hidden rounded-lg w-1/3">
                 <img 
-                  src="https://raw.githubusercontent.com/eddiebullock/landing-page-assets/main/WhatsApp%20Image%202025-08-31%20at%2015.58.41%20(1).jpeg" 
+                  src="https://raw.githubusercontent.com/eddiebullock/landing-page-assets/main/WhatsApp%20Image%202025-08-31%20at%2015.58.40.jpeg" 
                   alt="Behind the scenes - Team collaboration" 
                   className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                   style={{height:'100%'}}
