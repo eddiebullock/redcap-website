@@ -62,7 +62,7 @@ const About: React.FC = () => {
               <div className="relative group overflow-hidden rounded-lg w-1/3">
                 <img 
                   src="https://raw.githubusercontent.com/eddiebullock/landing-page-assets/main/WhatsApp%20Image%202025-08-31%20at%2015.58.41%20(1).jpeg" 
-                  alt="Behind the scenes - Production setup" 
+                  alt="Behind the scenes - Team collaboration" 
                   className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                   style={{height:'100%'}}
                   onError={handleImageError}
@@ -84,8 +84,8 @@ const About: React.FC = () => {
               </div>
               <div className="relative group overflow-hidden rounded-lg flex-1">
                 <img 
-                  src="https://raw.githubusercontent.com/eddiebullock/landing-page-assets/main/WhatsApp%20Image%202025-08-31%20at%2015.58.41%20(1).jpeg" 
-                  alt="Behind the scenes - Team collaboration" 
+                  src="https://raw.githubusercontent.com/eddiebullock/landing-page-assets/main/WhatsApp%20Image%202025-08-31%20at%2015.58.40.jpeg" 
+                  alt="Behind the scenes - Production setup" 
                   className="w-full h-24 md:h-32 object-cover transition-transform duration-300 group-hover:scale-110"
                   onError={handleImageError}
                 />
@@ -101,12 +101,12 @@ const About: React.FC = () => {
             Meet Our Team
           </h3>
           <div className="grid md:grid-cols-3 gap-8">
-                        {/* Team Member 1 - Eddie */}
+            {/* Team Member 1 - Eddie */}
             <div className="text-center group">
               <div className="relative mb-6">
                 <div className="w-48 h-48 mx-auto bg-gray-700 rounded-full overflow-hidden">
                   <img 
-                    src="https://via.placeholder.com/200x200/1f2937/ffffff?text=Eddie" 
+                    src="https://raw.githubusercontent.com/eddiebullock/landing-page-assets/main/ed%20head.png" 
                     alt="Eddie" 
                     className="w-full h-full object-cover"
                     onError={handleImageError}
@@ -135,7 +135,7 @@ const About: React.FC = () => {
               <div className="relative mb-6">
                 <div className="w-48 h-48 mx-auto bg-gray-700 rounded-full overflow-hidden">
                   <img 
-                    src="https://via.placeholder.com/200x200/1f2937/ffffff?text=Alf" 
+                    src="https://raw.githubusercontent.com/eddiebullock/landing-page-assets/main/alf%20head.png" 
                     alt="Alf" 
                     className="w-full h-full object-cover scale-110"
                     onError={handleImageError}
@@ -164,7 +164,7 @@ const About: React.FC = () => {
               <div className="relative mb-6">
                 <div className="w-48 h-48 mx-auto bg-gray-700 rounded-full overflow-hidden">
                   <img 
-                    src="https://via.placeholder.com/200x200/1f2937/ffffff?text=Sammy" 
+                    src="https://raw.githubusercontent.com/eddiebullock/landing-page-assets/main/sam%20head.jpeg" 
                     alt="Sammy" 
                     className="w-full h-full object-cover"
                     onError={handleImageError}
