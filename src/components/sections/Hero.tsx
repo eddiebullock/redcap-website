@@ -77,7 +77,7 @@ export default function Hero() {
       {/* Content Overlay */}
       <div className="relative z-20 text-center px-4 max-w-4xl mx-auto">
         <h1 className="text-5xl md:text-7xl font-serif font-bold text-white mb-6 animate-fade-in">
-          Science, Made Accessible.
+          shaaggggg, Made Accessible.
         </h1>
         <p className="text-xl md:text-2xl text-gray-200 mb-12 max-w-3xl mx-auto leading-relaxed animate-slide-up">
           We turn cutting-edge research into stories the world can see.
