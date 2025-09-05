@@ -6,6 +6,11 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
+        {/* Favicon */}
+        <link rel="icon" href="/favicon.png" type="image/png" />
+        <link rel="shortcut icon" href="/favicon.png" type="image/png" />
+        <link rel="apple-touch-icon" href="/favicon.png" />
+        
         {/* Preconnect to Vimeo for faster video loading */}
         <link rel="preconnect" href="https://player.vimeo.com" />
         <link rel="preconnect" href="https://i.vimeocdn.com" />
