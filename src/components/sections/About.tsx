@@ -21,7 +21,7 @@ const About: React.FC = () => {
           <h2 className="text-4xl md:text-5xl font-serif text-dark-900 mb-4">
             Our Story
           </h2>
-          <div className="w-24 h-1 bg-yellow-400 mx-auto"></div>
+          <div className="w-24 h-1 bg-primary-500 mx-auto"></div>
         </div>
 
         {/* About Content */}
