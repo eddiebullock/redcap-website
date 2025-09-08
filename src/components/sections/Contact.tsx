@@ -9,7 +9,21 @@ export default function Contact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    console.log('Form submitted:', formData)
+    
+    // Create mailto link with form data
+    const subject = encodeURIComponent(`Contact from ${formData.name} - RedCap Media Website`)
+    const body = encodeURIComponent(
+      `Name: ${formData.name}\n` +
+      `Email: ${formData.email}\n\n` +
+      `Message:\n${formData.message}`
+    )
+    
+    const mailtoLink = `mailto:eddie@mentalhealthprogram.co.uk?subject=${subject}&body=${body}`
+    
+    // Open email client
+    window.location.href = mailtoLink
+    
+    // Reset form
     setFormData({ name: '', email: '', message: '' })
   }
 

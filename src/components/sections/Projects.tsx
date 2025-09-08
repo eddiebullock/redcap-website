@@ -4,6 +4,7 @@ interface Project {
   id: number
   title: string
   description: string
+  detailedDescription: string
   image: string
   category: string
   year: string
@@ -14,22 +15,25 @@ const projects: Project[] = [
     id: 1,
     title: "The Race to AGI",
     description: "A feature documentary exploring the global race toward artificial intelligence.",
+    detailedDescription: "An in-depth exploration of humanity's quest to create artificial general intelligence. This documentary examines the technological breakthroughs, ethical dilemmas, and global implications of the race to develop machines that can think, learn, and reason like humans. Through interviews with leading researchers, industry pioneers, and ethicists, we uncover the profound questions about consciousness, creativity, and what it means to be human in an age of artificial intelligence.",
     image: "https://raw.githubusercontent.com/eddiebullock/landing-page-assets/main/doc.png",
     category: "Documentary",
-    year: "2024"
+    year: "2025"
   },
   {
     id: 2,
     title: "Frontiers",
     description: "Conversations with the public and leading scientists shaping our future.",
+    detailedDescription: "A groundbreaking series that bridges the gap between cutting-edge scientific research and public understanding. Frontiers features interviews with world-renowned scientists, researchers, and the public, creating valuable opportunities for direct engagement between experts and audiences. These public conversations demystify complex topics and encourage broader participation in scientific discourse. This series makes complex science accessible while exploring the ethical and societal implications of scientific advancement.",
     image: "https://raw.githubusercontent.com/eddiebullock/landing-page-assets/main/interview.png",
     category: "Series",
-    year: "2023"
+    year: "2025"
   },
   {
     id: 3,
     title: "Science Live",
     description: "Talks and workshops bringing science into classrooms and communities.",
+    detailedDescription: "Interactive educational experiences that bring science directly to students and communities. Science Live creates engaging workshops, presentations, and hands-on activities that make complex scientific concepts accessible and exciting for learners of all ages. Our psychoeducation assemblies in secondary schools have been featured in a case study published by <a href='https://my.chartered.college/impact_article/expanding-access-to-psychoeducation-in-secondary-schools/' target='_blank' rel='noopener noreferrer'>The Chartered College of Teaching</a>, demonstrating our evidence-based approach to mental health awareness and stigma reduction among adolescents.",
     image: "https://raw.githubusercontent.com/eddiebullock/landing-page-assets/main/school.png",
     category: "Documentary",
     year: "2024"
@@ -38,9 +42,10 @@ const projects: Project[] = [
     id: 4,
     title: "Articles & Newsletter",
     description: "Sharp, accessible writing that translates research into everyday insight.",
+    detailedDescription: "Thought-provoking articles and newsletters that distill complex scientific research into clear, engaging content. Our writing bridges the gap between academic research and public understanding, making science accessible to everyone. Our mental health science newsletter at <a href='https://thementalhealthprogram.substack.com/' target='_blank' rel='noopener noreferrer'>The Mental Health Program</a> reaches over 3,000 followers with evidence-based insights on psychological wellbeing. Our 'Science Live' work has been featured in a case study published by <a href='https://my.chartered.college/impact_article/expanding-access-to-psychoeducation-in-secondary-schools/' target='_blank' rel='noopener noreferrer'>The Chartered College of Teaching</a>, showcasing our evidence-based approach to mental health awareness.",
     image: "https://raw.githubusercontent.com/eddiebullock/landing-page-assets/main/articles.png",
     category: "Series",
-    year: "2023"
+    year: "2024"
   }
 ]
 
@@ -49,6 +54,14 @@ export default function Projects() {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [touchStart, setTouchStart] = useState<number | null>(null)
   const [touchEnd, setTouchEnd] = useState<number | null>(null)
+
+  const scrollToContact = () => {
+    const contactSection = document.getElementById('contact')
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' })
+    }
+    setSelectedProject(null)
+  }
 
   const nextProject = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % projects.length)
@@ -282,12 +295,26 @@ export default function Projects() {
                 <h3 className="text-2xl font-serif font-bold text-white mb-4">
                   {selectedProject.title}
                 </h3>
-                <p className="text-gray-300 leading-relaxed mb-6">
-                  {selectedProject.description}
-                </p>
-                <p className="text-gray-400 text-sm">
-                  [Placeholder: Full project description, synopsis, and trailer would go here. This is where you'd add the complete story, key themes, and impact of the project.]
-                </p>
+                <div 
+                  className="text-gray-300 leading-relaxed mb-6 [&_a]:text-primary-400 [&_a]:hover:text-primary-300 [&_a]:underline [&_a]:transition-colors [&_a]:duration-200"
+                  dangerouslySetInnerHTML={{ __html: selectedProject.detailedDescription }}
+                />
+                
+                {/* CTA Section */}
+                <div className="bg-dark-700 rounded-lg p-6 mb-6">
+                  <h4 className="text-lg font-semibold text-white mb-3">
+                    Want Access to the Footage?
+                  </h4>
+                  <p className="text-gray-300 mb-4">
+                    Interested in accessing our project footage or collaborating with us? We'd love to hear from you and discuss how we can work together.
+                  </p>
+                  <button
+                    onClick={scrollToContact}
+                    className="bg-primary-500 hover:bg-primary-600 text-white font-semibold py-3 px-6 rounded-md transition-colors duration-200"
+                  >
+                    Get In Touch
+                  </button>
+                </div>
               </div>
             </div>
           </div>

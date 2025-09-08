@@ -114,7 +114,7 @@ const About: React.FC = () => {
                 </div>
               </div>
               <h4 className="text-xl font-serif text-dark-900 mb-2">Eddie</h4>
-              <p className="text-primary-600 mb-3">Presenter & Creative Director</p>
+              <p className="text-primary-600 mb-3">Presenter & Writer</p>
               <p className="text-dark-600 text-sm mb-4">
                 Science presenter and PhD student at Cambridge University.
               </p>
@@ -142,10 +142,10 @@ const About: React.FC = () => {
                   />
                 </div>
               </div>
-              <h4 className="text-xl font-serif text-dark-900 mb-2">Alf</h4>
-              <p className="text-primary-600 mb-3">Director of Photography</p>
+              <h4 className="text-xl font-serif text-dark-900 mb-2">Alfie</h4>
+              <p className="text-primary-600 mb-3">Editing Lead & Cinematographer</p>
               <p className="text-dark-600 text-sm mb-4">
-                Visual storyteller who transforms complex narratives into compelling cinematic experiences.
+                Expert freelance cinematographer and editor with extensive experience in documentary production.
               </p>
               <a
                 href="https://www.linkedin.com/in/alfie-parry-photography/"
@@ -172,9 +172,9 @@ const About: React.FC = () => {
                 </div>
               </div>
               <h4 className="text-xl font-serif text-dark-900 mb-2">Sammy</h4>
-              <p className="text-primary-600 mb-3">Editor & Story Consultant</p>
+              <p className="text-primary-600 mb-3">Director of Photography</p>
               <p className="text-dark-600 text-sm mb-4">
-                Master of narrative structure who shapes raw footage into powerful, impactful stories.
+                Worked on numerous national programs including the BBC and ITV.
               </p>
               <a
                 href="#"
