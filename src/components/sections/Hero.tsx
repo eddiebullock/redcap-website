@@ -7,6 +7,7 @@ export default function Hero() {
   const [videoFailed, setVideoFailed] = useState(false)
   const [connectionSpeed, setConnectionSpeed] = useState<'fast' | 'slow'>('fast')
   const [videoDetected, setVideoDetected] = useState(false)
+  const [loadingProgress, setLoadingProgress] = useState(0)
   const iframeRef = useRef<HTMLIFrameElement>(null)
 
   useEffect(() => {
@@ -15,17 +16,31 @@ export default function Hero() {
       if ('connection' in navigator) {
         const connection = (navigator as any).connection
         const effectiveType = connection.effectiveType
-        if (effectiveType === 'slow-2g' || effectiveType === '2g' || effectiveType === '3g') {
+        const downlink = connection.downlink
+        if (effectiveType === 'slow-2g' || effectiveType === '2g' || effectiveType === '3g' || downlink < 1.5) {
           setConnectionSpeed('slow')
         }
       }
     }
 
-    // Preload the video by creating a hidden iframe
+    // Simulate loading progress
+    const simulateProgress = () => {
+      let progress = 0
+      const interval = setInterval(() => {
+        progress += Math.random() * 15
+        if (progress >= 100) {
+          progress = 100
+          clearInterval(interval)
+        }
+        setLoadingProgress(progress)
+      }, 200)
+    }
+
+    // Preload the video with more aggressive optimization
     const preloadVideo = () => {
-      const quality = connectionSpeed === 'slow' ? '240p' : 'auto'
+      const quality = connectionSpeed === 'slow' ? 'small' : 'medium'
       const preloadIframe = document.createElement('iframe')
-      preloadIframe.src = `https://player.vimeo.com/video/1115769247?background=1&autoplay=1&loop=1&byline=0&title=0&muted=1&controls=0&portrait=0&dnt=1&transparent=0&quality=${quality}&responsive=1`
+      preloadIframe.src = `https://www.youtube.com/embed/2P0hYcrQluE?autoplay=1&mute=1&loop=1&playlist=2P0hYcrQluE&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&fs=0&disablekb=1&start=0&end=0&quality=${quality}`
       preloadIframe.style.display = 'none'
       preloadIframe.loading = 'eager'
       document.body.appendChild(preloadIframe)
@@ -35,13 +50,30 @@ export default function Hero() {
         if (document.body.contains(preloadIframe)) {
           document.body.removeChild(preloadIframe)
         }
-      }, 10000)
+      }, 15000) // Increased cleanup time
+    }
+
+    // Preload critical resources
+    const preloadResources = () => {
+      // Preload the video thumbnail/poster
+      const img = new Image()
+      img.src = 'https://raw.githubusercontent.com/eddiebullock/landing-page-assets/main/WhatsApp%20Image%202025-08-30%20at%2020.53.25.jpeg'
+      
+      // Preload YouTube player script
+      const script = document.createElement('script')
+      script.src = 'https://www.youtube.com/iframe_api'
+      script.async = true
+      document.head.appendChild(script)
     }
 
     // Detect connection speed first
     detectConnectionSpeed()
     
+    // Start loading simulation
+    simulateProgress()
+    
     // Start preloading immediately
+    preloadResources()
     preloadVideo()
 
     // Check if video loads successfully with faster detection
@@ -110,6 +142,7 @@ export default function Hero() {
               setVideoDetected(true)
               setVideoLoaded(true)
               setIsLoading(false)
+              setLoadingProgress(100)
               // Quick fade out once video is detected
               setTimeout(() => setShowLoading(false), 500)
               return true // Video detected, stop further checks
@@ -120,8 +153,9 @@ export default function Hero() {
               setVideoDetected(true)
               setVideoLoaded(true)
               setIsLoading(false)
+              setLoadingProgress(100)
               setTimeout(() => setShowLoading(false), 500)
-            }, 1500)
+            }, 1000) // Reduced timeout
           }
         }
       }
@@ -144,8 +178,11 @@ export default function Hero() {
 
     // More frequent but shorter checks - only if not detected yet
     if (!videoDetected) {
+      setTimeout(checkVideoPlaying, 500)   // Faster initial check
       setTimeout(checkVideoPlaying, 1000)
+      setTimeout(checkVideoPlaying, 1500)  // More frequent checks
       setTimeout(checkVideoPlaying, 2000)
+      setTimeout(checkVideoPlaying, 2500)
       setTimeout(checkVideoPlaying, 3000)
       setTimeout(checkVideoPlaying, 4000)
       checkVideoFailure() // Start failure check
@@ -186,7 +223,7 @@ export default function Hero() {
       <div className="absolute inset-0 z-0 overflow-hidden">
         <iframe
           ref={iframeRef}
-          src={`https://player.vimeo.com/video/1115769247?background=1&autoplay=1&loop=1&byline=0&title=0&muted=1&controls=0&portrait=0&dnt=1&transparent=0&quality=${connectionSpeed === 'slow' ? '240p' : 'auto'}&responsive=1&speed=1`}
+          src={`https://www.youtube.com/embed/2P0hYcrQluE?autoplay=1&mute=1&loop=1&playlist=2P0hYcrQluE&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&fs=0&disablekb=1&start=0&end=0&quality=${connectionSpeed === 'slow' ? 'small' : 'medium'}`}
           className="absolute inset-0 w-full h-full z-10"
           frameBorder="0"
           allow="autoplay; fullscreen; picture-in-picture"
@@ -204,6 +241,32 @@ export default function Hero() {
             pointerEvents: 'none'
           }}
         />
+        
+        {/* Loading Bar */}
+        {showLoading && (
+          <div className="absolute inset-0 z-30 flex items-center justify-center bg-black/20">
+            <div className="flex flex-col items-center space-y-6">
+              {/* Loading text */}
+              <div className="text-white text-xl font-medium">
+                Loading video...
+              </div>
+              
+              {/* Progress bar container */}
+              <div className="w-80 h-2 bg-white/20 rounded-full overflow-hidden">
+                <div 
+                  className="h-full bg-white rounded-full transition-all duration-300 ease-out"
+                  style={{ width: `${loadingProgress}%` }}
+                />
+              </div>
+              
+              {/* Progress percentage */}
+              <div className="text-white text-sm font-medium">
+                {Math.round(loadingProgress)}%
+              </div>
+            </div>
+          </div>
+        )}
+        
         {/* Fallback image - only shows if video actually fails to load */}
         {videoFailed && (
           <img
@@ -212,35 +275,6 @@ export default function Hero() {
             className="w-full h-full object-cover absolute inset-0 z-5"
             loading="eager"
           />
-        )}
-        
-        {/* Enhanced Loading indicator */}
-        {showLoading && (
-          <div 
-            className={`absolute inset-0 z-30 flex items-center justify-center bg-black/20 transition-opacity duration-500 ${
-              isLoading ? 'opacity-100' : 'opacity-0'
-            }`}
-          >
-            <div className="flex flex-col items-center space-y-4">
-              {/* Main loading spinner */}
-              <div className="relative">
-                <div className="w-16 h-16 border-4 border-white/30 rounded-full"></div>
-                <div className="absolute top-0 left-0 w-16 h-16 border-4 border-white border-t-transparent rounded-full animate-spin"></div>
-              </div>
-              
-              {/* Loading text */}
-              <div className="text-white text-lg font-medium animate-pulse">
-                Loading video...
-              </div>
-              
-              {/* Progress dots */}
-              <div className="flex space-x-2">
-                <div className="w-2 h-2 bg-white rounded-full animate-bounce" style={{ animationDelay: '0ms' }}></div>
-                <div className="w-2 h-2 bg-white rounded-full animate-bounce" style={{ animationDelay: '150ms' }}></div>
-                <div className="w-2 h-2 bg-white rounded-full animate-bounce" style={{ animationDelay: '300ms' }}></div>
-              </div>
-            </div>
-          </div>
         )}
         {/* Dimming overlay - applied to both video and fallback */}
         <div className="absolute inset-0 bg-gradient-to-b from-dark-900/50 via-dark-900/70 to-dark-900/90 z-20" />
@@ -295,3 +329,4 @@ export default function Hero() {
     </section>
   )
 }
+

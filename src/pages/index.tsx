@@ -47,8 +47,14 @@ export default function Home() {
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet" />
         
-        {/* Vimeo Player */}
-        <script src="https://player.vimeo.com/api/player.js"></script>
+        {/* Preload critical resources */}
+        <link rel="preconnect" href="https://www.youtube.com" />
+        <link rel="preconnect" href="https://youtube.com" />
+        <link rel="dns-prefetch" href="https://www.youtube.com" />
+        <link rel="dns-prefetch" href="https://youtube.com" />
+        
+        {/* YouTube Player */}
+        <script src="https://www.youtube.com/iframe_api"></script>
       </Head>
       <div className="bg-white text-dark-900 min-h-screen">
         <Header />
