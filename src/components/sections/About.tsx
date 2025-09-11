@@ -32,7 +32,7 @@ const About: React.FC = () => {
               About RedCap Media
             </h2>
             <p className="text-lg text-dark-600 leading-relaxed">
-            There's a gap between research and the public. Our mission is to close it — turning science into stories that everyone can get exited by.
+            There's a gap between research and the public. Our mission is to close it — turning science into stories that everyone can get excited by.
             </p>
             <p className="text-lg text-dark-600 leading-relaxed">
               Our belief is simple: knowledge shouldn't stay locked in journals — it should reach people 
