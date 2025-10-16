@@ -19,7 +19,7 @@ export default function Footer() {
                 </svg>
               </div>
               <h3 className="text-2xl font-serif font-bold text-white">
-                RedCap Media
+                The Mental Health Program
               </h3>
             </div>
             <p className="text-gray-300 text-sm leading-relaxed mb-6 max-w-md">
@@ -114,22 +114,6 @@ export default function Footer() {
             <ul className="space-y-2">
               <li>
                 <a
-                  href="/press-kit"
-                  className="text-gray-300 hover:text-primary-500 text-sm transition-colors duration-200"
-                >
-                  Press Kit
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/media-inquiries"
-                  className="text-gray-300 hover:text-primary-500 text-sm transition-colors duration-200"
-                >
-                  Media Inquiries
-                </a>
-              </li>
-              <li>
-                <a
                   href="/privacy-policy"
                   className="text-gray-300 hover:text-primary-500 text-sm transition-colors duration-200"
                 >
@@ -152,10 +136,7 @@ export default function Footer() {
         <div className="border-t border-dark-700 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm">
-              © 2024 RedCap Media. All rights reserved.
-            </p>
-            <p className="text-gray-400 text-sm mt-2 md:mt-0">
-              Made with purpose in San Francisco, CA
+              © 2024 The Mental Health Program. All rights reserved.
             </p>
           </div>
         </div>
