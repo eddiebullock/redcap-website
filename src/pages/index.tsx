@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Hero from '@/components/sections/Hero'
+import Partnership from '@/components/sections/Partnership'
 import Projects from '@/components/sections/Projects'
 import About from '@/components/sections/About'
 import Services from '@/components/sections/Services'
@@ -60,6 +61,7 @@ export default function Home() {
         <Header />
         <main>
           <Hero />
+          <Partnership />
           <Projects />
           <About />
           <Services />

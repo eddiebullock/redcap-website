@@ -286,18 +286,12 @@ export default function Hero() {
       </div>
 
       {/* Content Overlay */}
-      <div className="relative z-20 text-center px-4 max-w-4xl mx-auto">
-        <h1 
-          className="text-5xl md:text-7xl font-serif font-bold text-white mb-6 animate-fade-in"
-          style={{ willChange: 'opacity, transform' }}
-        >
-          Science, Made Accessible.
-        </h1>
+      <div className="absolute bottom-24 left-0 right-0 z-20 text-center px-4 max-w-4xl mx-auto">
         <p 
-          className="text-xl md:text-2xl text-gray-200 mb-12 max-w-3xl mx-auto leading-relaxed animate-slide-up"
+          className="text-xl md:text-2xl text-gray-200 mb-8 max-w-3xl mx-auto leading-relaxed animate-slide-up"
           style={{ willChange: 'opacity, transform' }}
         >
-          We turn cutting-edge research into stories the world can see.
+          We turn cutting-edge research into podcasts and documentaries, making science accessible.
         </p>
         
         {/* CTA Buttons */}
@@ -317,7 +311,7 @@ export default function Hero() {
             className="border-2 border-white text-white hover:bg-white hover:text-dark-900 px-8 py-4 rounded-md text-lg font-semibold transition-all duration-300 transform hover:scale-105"
             style={{ willChange: 'transform, background-color, color' }}
           >
-            Work With Us
+            Partner With Us
           </button>
         </div>
       </div>
