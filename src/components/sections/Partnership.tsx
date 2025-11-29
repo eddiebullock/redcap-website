@@ -58,32 +58,32 @@ const Partnership: React.FC = () => {
             </p>
           </div>
 
-          {/* Behind the Scenes Gallery */}
+          {/* Production Gallery */}
           <div className="mb-16">
             <h3 className="text-2xl font-serif font-semibold text-dark-900 text-center mb-8">
-              Behind the Scenes
+              In Conversation
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <div className="relative group overflow-hidden rounded-lg">
                 <img 
-                  src="https://raw.githubusercontent.com/eddiebullock/landing-page-assets/main/WhatsApp%20Image%202025-08-30%20at%2020.53.25.jpeg" 
-                  alt="Behind the scenes - Podcast production" 
+                  src="https://raw.githubusercontent.com/eddiebullock/landing-page-assets/main/Eddie%20%26%20Edmund.jpg" 
+                  alt="Eddie in conversation with Prof Edmund Sonuga-Barke" 
                   className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-black bg-opacity-20 group-hover:bg-opacity-0 transition-all duration-300" />
               </div>
               <div className="relative group overflow-hidden rounded-lg">
                 <img 
-                  src="https://raw.githubusercontent.com/eddiebullock/landing-page-assets/main/WhatsApp%20Image%202025-08-31%20at%2015.58.41%20(1).jpeg" 
-                  alt="Behind the scenes - Interview setup" 
+                  src="https://raw.githubusercontent.com/eddiebullock/landing-page-assets/main/Eddie%20and%20Lucy%20Wide.jpg" 
+                  alt="Eddie in conversation with Dr Lucy Cheke" 
                   className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-black bg-opacity-20 group-hover:bg-opacity-0 transition-all duration-300" />
               </div>
               <div className="relative group overflow-hidden rounded-lg">
                 <img 
-                  src="https://raw.githubusercontent.com/eddiebullock/landing-page-assets/main/WhatsApp%20Image%202025-08-31%20at%2015.58.40.jpeg" 
-                  alt="Behind the scenes - Recording session" 
+                  src="https://raw.githubusercontent.com/eddiebullock/landing-page-assets/main/Eddie%20%26%20Robert.jpg" 
+                  alt="Eddie in conversation with Prof Robert Plomin" 
                   className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-black bg-opacity-20 group-hover:bg-opacity-0 transition-all duration-300" />
@@ -124,7 +124,7 @@ const Partnership: React.FC = () => {
               ))}
               <div className="bg-white rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow duration-300 flex items-center justify-center">
                 <p className="text-lg font-serif font-semibold text-dark-900 text-center">
-                  And Many More
+                  Plus Additional Distinguished Guests
                 </p>
               </div>
             </div>
