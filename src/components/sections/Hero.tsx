@@ -9,6 +9,8 @@ export default function Hero() {
   const [videoDetected, setVideoDetected] = useState(false)
   const [loadingProgress, setLoadingProgress] = useState(0)
   const iframeRef = useRef<HTMLIFrameElement>(null)
+  // Change these constants to update the hero video
+  const YT_ID = 't6tWJd9uISI'
 
   useEffect(() => {
     // Detect connection speed
@@ -40,7 +42,7 @@ export default function Hero() {
     const preloadVideo = () => {
       const quality = connectionSpeed === 'slow' ? 'small' : 'medium'
       const preloadIframe = document.createElement('iframe')
-      preloadIframe.src = `https://www.youtube.com/embed/2P0hYcrQluE?autoplay=1&mute=1&loop=1&playlist=2P0hYcrQluE&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&fs=0&disablekb=1&start=0&end=0&quality=${quality}&cc_load_policy=0&cc_lang_pref=en&hl=en&enablejsapi=1&origin=${typeof window !== 'undefined' ? window.location.origin : ''}&wmode=opaque&widget_referrer=${typeof window !== 'undefined' ? window.location.origin : ''}&playsinline=1&html5=1&version=3&playerapiid=ytplayer`
+      preloadIframe.src = `https://www.youtube.com/embed/${YT_ID}?autoplay=1&mute=1&loop=1&playlist=${YT_ID}&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&fs=0&disablekb=1&start=0&end=0&quality=${quality}&cc_load_policy=0&cc_lang_pref=en&hl=en&enablejsapi=1&origin=${typeof window !== 'undefined' ? window.location.origin : ''}&wmode=opaque&widget_referrer=${typeof window !== 'undefined' ? window.location.origin : ''}&playsinline=1&html5=1&version=3&playerapiid=ytplayer`
       preloadIframe.style.display = 'none'
       preloadIframe.loading = 'eager'
       document.body.appendChild(preloadIframe)
@@ -223,7 +225,7 @@ export default function Hero() {
       <div className="absolute inset-0 z-0 overflow-hidden">
         <iframe
           ref={iframeRef}
-          src={`https://www.youtube.com/embed/2P0hYcrQluE?autoplay=1&mute=1&loop=1&playlist=2P0hYcrQluE&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&fs=0&disablekb=1&start=0&end=0&quality=${connectionSpeed === 'slow' ? 'small' : 'medium'}&cc_load_policy=0&cc_lang_pref=en&hl=en&enablejsapi=1&origin=${typeof window !== 'undefined' ? window.location.origin : ''}&wmode=opaque&widget_referrer=${typeof window !== 'undefined' ? window.location.origin : ''}&playsinline=1&html5=1&version=3&playerapiid=ytplayer`}
+          src={`https://www.youtube.com/embed/${YT_ID}?autoplay=1&mute=1&loop=1&playlist=${YT_ID}&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&fs=0&disablekb=1&start=0&end=0&quality=${connectionSpeed === 'slow' ? 'small' : 'medium'}&cc_load_policy=0&cc_lang_pref=en&hl=en&enablejsapi=1&origin=${typeof window !== 'undefined' ? window.location.origin : ''}&wmode=opaque&widget_referrer=${typeof window !== 'undefined' ? window.location.origin : ''}&playsinline=1&html5=1&version=3&playerapiid=ytplayer`}
           className="absolute inset-0 w-full h-full z-10"
           style={{
             position: 'absolute',
