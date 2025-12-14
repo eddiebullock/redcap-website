@@ -18,8 +18,8 @@ const guests: Guest[] = [
     institution: 'King\'s College London'
   },
   {
-    name: 'Dr Lucy Cheke',
-    title: 'Senior Lecturer in Psychology',
+    name: 'Prof Lucy Cheke',
+    title: 'Professor of Experimental Psychology',
     institution: 'University of Cambridge'
   },
   {
