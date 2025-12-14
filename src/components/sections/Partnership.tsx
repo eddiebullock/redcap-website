@@ -31,6 +31,11 @@ const guests: Guest[] = [
     name: 'Prof Martin Gleave OC',
     title: 'Professor of Urologic Sciences',
     institution: 'University of British Columbia'
+  },
+  {
+    name: 'Prof Carrie Allison',
+    title: 'Director of Research',
+    institution: 'University of Cambridge'
   }
 ]
 
@@ -122,12 +127,10 @@ const Partnership: React.FC = () => {
                   )}
                 </div>
               ))}
-              <div className="bg-white rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow duration-300 flex items-center justify-center">
-                <p className="text-lg font-serif font-semibold text-dark-900 text-center">
-                  Plus Additional Distinguished Guests
-                </p>
-              </div>
             </div>
+            <p className="text-center text-dark-600 mt-6 text-sm italic">
+              Plus additional featured guests
+            </p>
           </div>
 
           {/* Contact CTA */}
