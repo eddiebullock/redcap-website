@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import type React from 'react'
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -54,7 +55,30 @@ export default function Contact() {
           </p>
         </div>
 
-        <div className="max-w-2xl mx-auto">
+        <div className="max-w-2xl mx-auto space-y-6">
+          <div className="bg-white/90 backdrop-blur rounded-lg p-6 shadow-md">
+            <h3 className="text-2xl font-serif font-semibold text-dark-900 mb-3">
+              Contact Us
+            </h3>
+            <p className="text-dark-700">
+              If the form below doesn&rsquo;t work, email us at{' '}
+              <a
+                href="mailto:eddie@mentalhealthprogram.co.uk"
+                className="text-primary-600 font-semibold underline"
+              >
+                eddie@mentalhealthprogram.co.uk
+              </a>{' '}
+              or text us on{' '}
+              <a
+                href="tel:07527966143"
+                className="text-primary-600 font-semibold underline"
+              >
+                07527966143
+              </a>
+              .
+            </p>
+          </div>
+
           <div className="bg-white rounded-lg p-8 shadow-lg">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
