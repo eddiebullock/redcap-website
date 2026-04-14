@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 export default function Footer() {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId)
@@ -66,6 +68,14 @@ export default function Footer() {
             <h4 className="text-white font-semibold mb-4">Navigation</h4>
             <ul className="space-y-2">
               <li>
+                <Link
+                  href="/bridging-the-gap"
+                  className="text-gray-300 hover:text-primary-500 text-sm transition-colors duration-200"
+                >
+                  Podcast
+                </Link>
+              </li>
+              <li>
                                   <button
                     onClick={() => scrollToSection('projects')}
                     className="text-gray-300 hover:text-primary-500 text-sm transition-colors duration-200"
@@ -105,20 +115,20 @@ export default function Footer() {
             <h4 className="text-white font-semibold mb-4">Resources</h4>
             <ul className="space-y-2">
               <li>
-                <a
+                <Link
                   href="/privacy-policy"
                   className="text-gray-300 hover:text-primary-500 text-sm transition-colors duration-200"
                 >
                   Privacy Policy
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   href="/terms-of-service"
                   className="text-gray-300 hover:text-primary-500 text-sm transition-colors duration-200"
                 >
                   Terms of Service
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

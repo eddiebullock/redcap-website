@@ -28,7 +28,7 @@ export default function PrivacyPolicy() {
               <section className="mb-8">
                 <h2 className="text-2xl font-serif font-semibold text-dark-900 mb-4">1. Introduction</h2>
                 <p className="text-gray-700 leading-relaxed mb-4">
-                  The Mental Health Program ("we," "our," or "us") is the holding company that operates RedCap Media, our documentary content production arm. We respect your privacy and are committed to protecting your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or use our services.
+                  The Mental Health Program (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;) is the holding company that operates RedCap Media, our documentary content production arm. We respect your privacy and are committed to protecting your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or use our services.
                 </p>
               </section>
 
@@ -127,7 +127,7 @@ export default function PrivacyPolicy() {
               </section>
 
               <section className="mb-8">
-                <h2 className="text-2xl font-serif font-semibold text-dark-900 mb-4">9. Children's Privacy</h2>
+                <h2 className="text-2xl font-serif font-semibold text-dark-900 mb-4">9. Children&apos;s Privacy</h2>
                 <p className="text-gray-700 leading-relaxed mb-4">
                   Our services are not directed to children under 13 years of age. We do not knowingly collect personal information from children under 13.
                 </p>
@@ -136,7 +136,7 @@ export default function PrivacyPolicy() {
               <section className="mb-8">
                 <h2 className="text-2xl font-serif font-semibold text-dark-900 mb-4">10. Changes to This Privacy Policy</h2>
                 <p className="text-gray-700 leading-relaxed mb-4">
-                  We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last updated" date.
+                  We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the &quot;Last updated&quot; date.
                 </p>
               </section>
 

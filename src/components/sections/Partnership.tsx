@@ -59,7 +59,7 @@ const Partnership: React.FC = () => {
             </h2>
             <div className="w-24 h-1 bg-primary-500 mx-auto mb-6"></div>
             <p className="text-xl md:text-2xl text-dark-600 max-w-3xl mx-auto leading-relaxed">
-              We have a fully-produced podcast ready to partner with the right media outlet. All the work is done—we're offering a turnkey opportunity to bring cutting-edge science to wider audiences.
+              We have a fully-produced podcast ready to partner with the right media outlet. All the work is done—we&apos;re offering a turnkey opportunity to bring cutting-edge science to wider audiences.
             </p>
           </div>
 
@@ -95,7 +95,7 @@ const Partnership: React.FC = () => {
               </div>
             </div>
             <p className="text-lg text-dark-600 max-w-3xl mx-auto leading-relaxed mt-8">
-              Our podcast features in-depth conversations with world-leading academics, translating complex research into accessible stories. We've already interviewed some of the most respected voices in science—the content is produced, edited, and ready to go. This is a ready-made opportunity for media outlets looking to add high-quality science content to their portfolio.
+              Our podcast features in-depth conversations with world-leading academics, translating complex research into accessible stories. We&apos;ve already interviewed some of the most respected voices in science—the content is produced, edited, and ready to go. This is a ready-made opportunity for media outlets looking to add high-quality science content to their portfolio.
             </p>
           </div>
 
@@ -105,7 +105,7 @@ const Partnership: React.FC = () => {
               Featured Guests
             </h3>
             <p className="text-center text-dark-600 mb-6 max-w-2xl mx-auto text-sm">
-              We've had the privilege of interviewing some of the world's most influential academics, bringing their groundbreaking research to life through engaging conversations.
+              We&apos;ve had the privilege of interviewing some of the world&apos;s most influential academics, bringing their groundbreaking research to life through engaging conversations.
             </p>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

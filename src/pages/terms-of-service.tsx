@@ -81,7 +81,7 @@ export default function TermsOfService() {
               <section className="mb-8">
                 <h2 className="text-2xl font-serif font-semibold text-dark-900 mb-4">6. Disclaimer</h2>
                 <p className="text-gray-700 leading-relaxed mb-4">
-                  The information on this website is provided on an "as is" basis. To the fullest extent permitted by law, The Mental Health Program:
+                  The information on this website is provided on an &quot;as is&quot; basis. To the fullest extent permitted by law, The Mental Health Program:
                 </p>
                 <ul className="list-disc list-inside text-gray-700 mb-4 space-y-2">
                   <li>Excludes all representations and warranties relating to this website and its contents</li>

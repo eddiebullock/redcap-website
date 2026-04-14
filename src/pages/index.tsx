@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Script from 'next/script'
 import Hero from '@/components/sections/Hero'
 import Partnership from '@/components/sections/Partnership'
 import Projects from '@/components/sections/Projects'
@@ -53,10 +54,11 @@ export default function Home() {
         <link rel="preconnect" href="https://youtube.com" />
         <link rel="dns-prefetch" href="https://www.youtube.com" />
         <link rel="dns-prefetch" href="https://youtube.com" />
-        
-        {/* YouTube Player */}
-        <script src="https://www.youtube.com/iframe_api"></script>
       </Head>
+
+      {/* YouTube Player */}
+      <Script src="https://www.youtube.com/iframe_api" strategy="afterInteractive" />
+
       <div className="bg-white text-dark-900 min-h-screen">
         <Header />
         <main>

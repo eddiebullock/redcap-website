@@ -306,7 +306,7 @@ export default function Projects() {
                     Want Access to the Footage?
                   </h4>
                   <p className="text-gray-300 mb-4">
-                    Interested in accessing our project footage or collaborating with us? We'd love to hear from you and discuss how we can work together.
+                    Interested in accessing our project footage or collaborating with us? We&apos;d love to hear from you and discuss how we can work together.
                   </p>
                   <button
                     onClick={scrollToContact}

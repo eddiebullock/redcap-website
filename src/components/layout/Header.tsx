@@ -1,8 +1,11 @@
+import Link from 'next/link'
+import { useRouter } from 'next/router'
 import { useState, useEffect } from 'react'
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
+  const router = useRouter()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -14,11 +17,15 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId)
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' })
+  const navigateToSection = (sectionId: string) => {
+    if (router.pathname === '/') {
+      const element = document.getElementById(sectionId)
+      if (element) element.scrollIntoView({ behavior: 'smooth' })
+      setIsMenuOpen(false)
+      return
     }
+
+    router.push(`/#${sectionId}`)
     setIsMenuOpen(false)
   }
 
@@ -31,23 +38,31 @@ export default function Header() {
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <div className="flex items-center">
-            <img 
-              src="/favicon.png" 
-              alt="RedCap Media Logo" 
-              className="w-8 h-8 mr-3"
-            />
-            <h1 className={`text-2xl font-serif font-bold transition-colors duration-300 ${
-              isScrolled ? 'text-dark-900' : 'text-white'
-            }`}>
+          <Link href="/" className="flex items-center" onClick={() => setIsMenuOpen(false)}>
+            <img src="/favicon.png" alt="RedCap Media Logo" className="w-8 h-8 mr-3" />
+            <span
+              className={`text-2xl font-serif font-bold transition-colors duration-300 ${
+                isScrolled ? 'text-dark-900' : 'text-white'
+              }`}
+            >
               RedCap Media
-            </h1>
-          </div>
+            </span>
+          </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
+            <Link
+              href="/bridging-the-gap"
+              className={`transition-colors duration-200 ${
+                isScrolled
+                  ? 'text-dark-600 hover:text-primary-600'
+                  : 'text-white hover:text-primary-400'
+              }`}
+            >
+              Podcast
+            </Link>
             <button
-              onClick={() => scrollToSection('projects')}
+              onClick={() => navigateToSection('projects')}
               className={`transition-colors duration-200 ${
                 isScrolled 
                   ? 'text-dark-600 hover:text-primary-600' 
@@ -57,7 +72,7 @@ export default function Header() {
               Projects
             </button>
             <button
-              onClick={() => scrollToSection('about')}
+              onClick={() => navigateToSection('about')}
               className={`transition-colors duration-200 ${
                 isScrolled 
                   ? 'text-dark-600 hover:text-primary-600' 
@@ -67,7 +82,7 @@ export default function Header() {
               About
             </button>
             <button
-              onClick={() => scrollToSection('services')}
+              onClick={() => navigateToSection('services')}
               className={`transition-colors duration-200 ${
                 isScrolled 
                   ? 'text-dark-600 hover:text-primary-600' 
@@ -77,7 +92,7 @@ export default function Header() {
               Services
             </button>
             <button
-              onClick={() => scrollToSection('contact')}
+              onClick={() => navigateToSection('contact')}
               className="bg-primary-500 hover:bg-primary-600 text-white px-6 py-2 rounded-md transition-colors duration-200"
             >
               Contact
@@ -109,8 +124,19 @@ export default function Header() {
             isScrolled ? 'border-gray-200' : 'border-white/20'
           }`}>
             <div className="flex flex-col space-y-4 pt-4">
+              <Link
+                href="/bridging-the-gap"
+                onClick={() => setIsMenuOpen(false)}
+                className={`transition-colors duration-200 text-left ${
+                  isScrolled
+                    ? 'text-dark-600 hover:text-primary-600'
+                    : 'text-white hover:text-primary-400'
+                }`}
+              >
+                Podcast
+              </Link>
               <button
-                onClick={() => scrollToSection('projects')}
+                onClick={() => navigateToSection('projects')}
                 className={`transition-colors duration-200 text-left ${
                   isScrolled 
                     ? 'text-dark-600 hover:text-primary-600' 
@@ -120,7 +146,7 @@ export default function Header() {
                 Projects
               </button>
               <button
-                onClick={() => scrollToSection('about')}
+                onClick={() => navigateToSection('about')}
                 className={`transition-colors duration-200 text-left ${
                   isScrolled 
                     ? 'text-dark-600 hover:text-primary-600' 
@@ -130,7 +156,7 @@ export default function Header() {
                 About
               </button>
               <button
-                onClick={() => scrollToSection('services')}
+                onClick={() => navigateToSection('services')}
                 className={`transition-colors duration-200 text-left ${
                   isScrolled 
                     ? 'text-dark-600 hover:text-primary-600' 
@@ -140,7 +166,7 @@ export default function Header() {
                 Services
               </button>
               <button
-                onClick={() => scrollToSection('contact')}
+                onClick={() => navigateToSection('contact')}
                 className="bg-primary-500 hover:bg-primary-600 text-white px-6 py-2 rounded-md transition-colors duration-200 text-left"
               >
                 Contact
