@@ -58,10 +58,22 @@ const PODCAST = {
   canonicalUrl: 'https://redcapmedia.co.uk/bridging-the-gap',
   imageUrl: 'https://redcapmedia.co.uk/images/podcast/bridging-the-gap.png',
   latestEpisode: {
-    title: 'Latest episode',
-    youtubeUrl: 'https://www.youtube.com/watch?v=ItemZdUJph0&t=2621s',
-    youtubeEmbedUrl: 'https://www.youtube.com/embed/ItemZdUJph0?start=2621',
+    title: 'How Much Exercise Should We Be Doing?',
+    youtubeUrl: 'https://www.youtube.com/watch?v=dUKO4i3zifw&t=62s',
+    youtubeEmbedUrl: 'https://www.youtube.com/embed/dUKO4i3zifw?start=62',
   },
+  episodes: [
+    {
+      title: 'Episode 2',
+      youtubeUrl: 'https://www.youtube.com/watch?v=jozCIS4XhVg&t=45s',
+      youtubeEmbedUrl: 'https://www.youtube.com/embed/jozCIS4XhVg?start=45',
+    },
+    {
+      title: 'Episode 3',
+      youtubeUrl: 'https://www.youtube.com/watch?v=JaNWmH6GUS8&t=215s',
+      youtubeEmbedUrl: 'https://www.youtube.com/embed/JaNWmH6GUS8?start=215',
+    },
+  ],
   platforms: [
     {
       label: 'Amazon Music',
@@ -244,27 +256,46 @@ export default function BridgingTheGapPage() {
             </div>
           </section>
 
-          {/* More episodes */}
-          <section className="pb-24">
+          {/* Episodes */}
+          <section id="episodes" className="pb-24">
             <div className="container mx-auto px-4">
-              <div className="rounded-2xl border border-gray-200 bg-gray-50 p-8 sm:p-10">
-                <h3 className="text-2xl font-serif font-bold text-dark-900">More episodes coming soon</h3>
-                <p className="mt-3 text-gray-700 leading-relaxed max-w-3xl">
-                  We’ll add new episodes here as they release. In the meantime, you can follow the show on your favorite platform to get notified.
+              <div className="max-w-3xl mb-8">
+                <h2 className="text-3xl sm:text-4xl font-serif font-bold text-dark-900">
+                  Episodes
+                </h2>
+                <p className="mt-3 text-gray-600 leading-relaxed">
+                  Catch up on previous conversations from Bridging the Gap.
                 </p>
-                <div className="mt-6 flex flex-wrap gap-3">
-                  {PODCAST.platforms.map((p) => (
-                    <a
-                      key={`${p.href}-chip`}
-                      href={p.href}
-                      target="_blank"
-                      rel="noreferrer noopener"
-                      className="inline-flex items-center rounded-full border border-gray-300 bg-white px-4 py-2 text-sm text-dark-900 hover:border-primary-300 hover:text-primary-700 transition-colors duration-200"
-                    >
-                      {p.label}
-                    </a>
-                  ))}
-                </div>
+              </div>
+
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                {PODCAST.episodes.map((episode) => (
+                  <div key={episode.youtubeUrl} className="rounded-2xl overflow-hidden border border-gray-200 bg-white shadow-lg">
+                    <div className="relative w-full" style={{ paddingTop: '56.25%' }}>
+                      <iframe
+                        src={episode.youtubeEmbedUrl}
+                        title={`${PODCAST.title} - ${episode.title}`}
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerPolicy="strict-origin-when-cross-origin"
+                        allowFullScreen
+                        className="absolute inset-0 w-full h-full"
+                      />
+                    </div>
+                    <div className="p-5 flex items-center justify-between gap-4">
+                      <h3 className="text-lg font-serif font-semibold text-dark-900">
+                        {episode.title}
+                      </h3>
+                      <a
+                        href={episode.youtubeUrl}
+                        target="_blank"
+                        rel="noreferrer noopener"
+                        className="text-sm text-primary-600 hover:text-primary-700 font-medium whitespace-nowrap"
+                      >
+                        Watch on YouTube
+                      </a>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
           </section>
