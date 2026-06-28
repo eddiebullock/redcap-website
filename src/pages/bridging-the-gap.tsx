@@ -64,6 +64,11 @@ const PODCAST = {
   },
   episodes: [
     {
+      title: 'Episode 1',
+      youtubeUrl: 'https://www.youtube.com/watch?v=ItemZdUJph0&t=2621s',
+      youtubeEmbedUrl: 'https://www.youtube.com/embed/ItemZdUJph0?start=2621',
+    },
+    {
       title: 'Episode 2',
       youtubeUrl: 'https://www.youtube.com/watch?v=jozCIS4XhVg&t=45s',
       youtubeEmbedUrl: 'https://www.youtube.com/embed/jozCIS4XhVg?start=45',
